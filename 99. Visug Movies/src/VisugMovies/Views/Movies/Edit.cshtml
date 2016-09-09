@@ -1,0 +1,7 @@
+﻿@model VisugMovies.ViewModels.MovieDetailViewModel
+
+<h2>Edit a movie from the database</h2>
+
+<form asp-controller="Movies" asp-action="Edit" method="post">
+    @Html.Partial( "_MovieDetail", Model )
+</form>

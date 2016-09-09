@@ -1,0 +1,27 @@
+﻿@model VisugMovies.ViewModels.GenreListViewModel
+
+<h2>Genres</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach( var genre in Model.Genres ) {
+        <tr>
+            <td>@genre.Id</td>
+            <td>@genre.Name</td>
+            <td>
+                <a class="btn btn-danger" asp-controller="Genres" asp-action="Delete" asp-route-id="@genre.Id">Delete</a>
+                <a class="btn btn-primary" asp-controller="Genres" asp-action="Edit" asp-route-id="@genre.Id">Edit</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Genres" asp-action="Add">Add a new genre</a>

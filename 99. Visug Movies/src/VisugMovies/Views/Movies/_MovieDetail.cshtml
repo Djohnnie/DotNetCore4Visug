@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model VisugMovies.ViewModels.MovieDetailViewModel
+
+<div class="row row-margin">
+    <label asp-for="Title">Title: </label>
+    <div class="input-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-chevron-right"></span></span>
+        <input asp-for="Title" class="form-control" />
+    </div>
+</div>
+
+<br />
+
+<div class="row row-margin">
+    <label asp-for="Director">Director: </label>
+    <div class="input-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-chevron-right"></span></span>
+        <input asp-for="Director" class="form-control" />
+    </div>
+</div>
+
+<br />
+
+<div class="row row-margin">
+    <label asp-for="GenreId">Genre: </label>
+    <div class="input-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-chevron-right"></span></span>
+        @{
+          var selectList = new SelectList( Model.Genres, "Id", "Name" );
+        }
+        <select asp-for="GenreId" asp-items="selectList" class="form-control"></select>
+    </div>
+</div>
+
+<br />
+
+<div class="row row-margin">
+    <button type="submit" class="btn btn-success" aria-label="Left Align">
+        <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+        Opslaan
+    </button>
+</div>

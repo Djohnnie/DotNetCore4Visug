@@ -1,0 +1,7 @@
+﻿@model VisugMovies.ViewModels.GenreDetailViewModel
+
+<h2>Add a genre to the database</h2>
+
+<form asp-controller="Genres" asp-action="Add" method="post">
+    @Html.Partial( "_GenreDetail", Model )
+</form>
